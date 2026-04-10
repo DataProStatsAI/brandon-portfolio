@@ -1,0 +1,36 @@
+.projects {
+  min-height: 100vh;
+  padding: 100px 5vw 80px;
+  background: var(--dark2);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--g1); margin-bottom: 0.6rem; }
+.title { font-family: var(--font-h); font-size: clamp(2rem,5vw,3.8rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 3rem; }
+.title span { color: var(--g1); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  padding: 2rem; position: relative; overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.card::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(0,255,136,0.04), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.card:hover { transform: translateY(-6px); border-color: rgba(0,255,136,0.4); box-shadow: 0 20px 60px rgba(0,255,136,0.07); }
+.card:hover::after { opacity: 1; }
+
+.icon { font-size: 2rem; margin-bottom: 1rem; }
+.cardTitle { font-family: var(--font-h); font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.desc { font-size: 0.75rem; line-height: 1.85; color: var(--muted); margin-bottom: 1.25rem; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tag {
+  font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 3px 10px;
+  border: 1px solid rgba(0,255,136,0.3);
+  color: var(--g1); background: rgba(0,255,136,0.05);
+}

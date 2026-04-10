@@ -1,0 +1,27 @@
+.skills {
+  min-height: 100vh;
+  padding: 100px 5vw 80px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--g1); margin-bottom: 0.6rem; }
+.title { font-family: var(--font-h); font-size: clamp(2rem,5vw,3.8rem); font-weight: 800; letter-spacing: -2px; margin-bottom: 3rem; }
+.title span { color: var(--g1); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.8rem; }
+
+.item {}
+.header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.name  { font-size: 0.78rem; letter-spacing: 0.04em; }
+.pct   { font-size: 0.72rem; color: var(--g1); font-weight: 700; }
+
+.bar   { height: 3px; background: rgba(0,255,136,0.1); position: relative; overflow: hidden; }
+.fill  {
+  position: absolute; inset-block: 0; left: 0;
+  background: linear-gradient(90deg, var(--g3), var(--g1));
+  transform: scaleX(0); transform-origin: left;
+  animation: fill 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+@keyframes fill {
+  to { transform: scaleX(1); }
+}
